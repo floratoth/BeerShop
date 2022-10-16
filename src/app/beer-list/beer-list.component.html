@@ -1,0 +1,4 @@
+<ng-container *ngFor="let beer of beers | async">
+  <p>{{ beer.name }}</p>
+  <img  [src]="beer.image_url" alt="">
+</ng-container>

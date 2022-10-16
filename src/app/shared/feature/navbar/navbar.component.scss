@@ -1,0 +1,117 @@
+@import "C:/Projects/BeerShop/src/_colors.scss";
+
+#navbar-container {
+  position: absolute;
+  width: 100%;
+  height: 198px;
+  left: 0px;
+  top: 0px;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+}
+
+#navbar-container-top {
+  padding-left: 80px;
+  padding-right: 80px;
+  border-bottom: 1px solid $grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-container-top-item {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-container-top-item:hover {
+  cursor: pointer;
+}
+
+#contact-img {
+  padding-right: 6px;
+}
+
+#language-text {
+  padding: 0 6px;
+}
+
+#navbar-container-bottom {
+  padding-left: 80px;
+  padding-right: 69px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  border-bottom: 1px solid $grey;
+}
+
+#logo-container {
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  height: 96px;
+  width: 138px;
+}
+
+#logo:hover {
+  cursor: pointer;
+}
+
+#navbar-content-container {
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+}
+
+#navbar-content-container-top {
+  box-sizing: border-box;
+  margin-top: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#navbar-content-container-bottom {
+  box-sizing: border-box;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+}
+
+#nav-menu-items {
+  width: 366px;
+  height: 45px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+app-nav-menu-item {
+  width: 73px;
+  height: 100%;
+  cursor: pointer;
+}
+
+#nav-pages {
+  display: flex;
+  flex-direction: row;
+  width: 315px;
+  gap: 24px;
+  height: 100%;
+}
+
+.nav-page-item-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-page-item {
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.active-page {
+  border-bottom: 2px solid $primary;
+}
