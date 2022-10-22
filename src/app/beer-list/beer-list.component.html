@@ -1,4 +1,51 @@
-<ng-container *ngFor="let beer of beers | async">
-  <p>{{ beer.name }}</p>
-  <img  [src]="beer.image_url" alt="">
-</ng-container>
+<h2 class="headline_h1">All Beers</h2>
+<div id="beer-list-container-outer">
+  <div>
+    <div id="filter-title-container">
+      <img src="../../assets/icons/filter.svg" alt="">
+      <p class="text_uppercase filter-title">Filter by</p>
+    </div>
+    <div class="checks">
+      <p class="text_bold filter-by-title">Beer Styles</p>
+      <app-checkbox
+        *ngFor="let option of filterOptionsByStyle"
+        [value]="option.name"
+        [labelText]="option.name"
+        (change)="
+          onCheckboxValueChange($event, checkedStyleFilterBoxValues, 'string')
+        "
+      ></app-checkbox>
+    </div>
+    <div class="checks">
+      <p class="text_bold filter-by-title">Number of malts</p>
+      <app-checkbox
+        *ngFor="let option of filterOptionsByMalt"
+        [value]="option.value"
+        [labelText]="option.name"
+        (change)="
+          onCheckboxValueChange($event, checkedMaltFilterBoxValues, 'array')
+        "
+      ></app-checkbox>
+    </div>
+  </div>
+  <div>
+    <div id="active-filters-container">
+      <p></p>
+      <div>
+
+      </div>
+    </div>
+    <div id="beer-list-grid">
+      <ng-container *ngFor="let beer of beers | async">
+        <app-beer-card
+          [beerStyle]="beer.beer_style"
+          [beerName]="beer.name"
+          [beerDesc]="beer.contributor"
+          [imageUrl]="beer.image_url"
+          [price]="beer.price"
+          [content]="beer.content"
+        ></app-beer-card>
+      </ng-container>
+    </div>
+  </div>
+</div>

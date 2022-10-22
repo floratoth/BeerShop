@@ -1,3 +1,5 @@
+@import "./colors.scss";
+
 @font-face {
   font-family: lato;
   src: url("./assets/fonts/Lato-Regular.ttf") format("opentype");
@@ -5,4 +7,115 @@
 
 * {
   font-family: lato;
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+// Change svg icon color
+.svg-icon {
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+// Typography
+.headline_h1 {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 900;
+}
+.headline_h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 900;
+}
+.headline_h3 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+}
+.headline_h4 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.headline_h5 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 900;
+}
+.text_standard {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.text_semi-bold {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+.text_bold {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+}
+.text_uppercase {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.text_standard-link {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: $turquoise-dark;
+  text-decoration-line: underline;
+}
+.caption {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.caption_link {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  color: $turquoise-dark;
+  text-decoration-line: underline;
+}
+.caption_bold {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700;
+}
+.caption_uppercase-bold {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.button_label {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 900;
+}
+.caption_small {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.caption_small-bold {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
 }

@@ -1,1 +1,54 @@
-<p>beer-card works!</p>
+<div id="card-container-outer">
+  <div id="card-container-inner">
+    <div id="card-info-container">
+      <div id="card-info-header">
+        <span>card</span>
+        <div id="card-header-icons-container">
+          <img
+            src="../../../../assets/icons/compare-black.svg"
+            class="card-header-icon"
+            alt=""
+          />
+          <img
+            src="../../../../assets/icons/heart.svg"
+            class="card-header-icon"
+            alt=""
+          />
+        </div>
+      </div>
+      <div id="card-info-img">
+        <img [src]="imageUrl" alt="" />
+      </div>
+      <div id="card-info-text">
+        <p id="beerStyle">{{ beerStyle }}</p>
+        <p id="beerName">{{ beerName }}</p>
+        <p id="beerDesc">{{ beerDesc }}</p>
+      </div>
+    </div>
+    <div id="card-price-container">
+      <div>
+        <p id="beer-card-price" class="headline_h1">
+          {{ price | currency: "EUR" }}
+        </p>
+        <p id="beer-card-content">
+          Content <span id="beer-card-content-grey">{{ content | number:'1.2-2' }} Liter</span>
+        </p>
+      </div>
+      <div id="card-cart-container">
+        <input
+          type="text"
+          value="1"
+          id="card-cart-input"
+          class="text_standard"
+        />
+        <button id="cart-button">
+          <div
+            class="svg-icon cart-button-icon"
+            src="../../../../assets/icons/cart.svg"
+          ></div>
+          <span class="button_label">Add to cart</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

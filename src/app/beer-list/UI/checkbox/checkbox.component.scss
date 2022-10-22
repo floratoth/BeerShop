@@ -1,0 +1,90 @@
+@import "../../../../colors";
+
+.checkbox-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* #filterCheckbox {
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid $dark-grey;
+  border-radius: 1px;
+
+  &:hover {
+    border-color: $black;
+  }
+
+  &:focus {
+    border: 2px solid $orange;
+  }
+} */
+
+/* #sign {
+  position: absolute;
+  left: 6px;
+  top: 7px;
+}
+
+#checkbox-text {
+  margin: 0;
+} */
+
+/* input[type=checkbox]:not(:checked) {
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid $dark-grey;
+  border-radius: 1px;
+  background-color: $dark-grey;
+  background-size: 40%;
+}
+
+input[type=checkbox]:checked {
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid $dark-grey;
+  border-radius: 1px;
+  background-image: url("../../../../assets/icons/checked.svg");
+  background-color: yellow;
+  background-size: 50%;
+  &:focus-within {
+    border: 1px solid $orange;
+  }
+} */
+
+#filterCheckbox:hover {
+  border: 1px solid $black;
+}
+
+#filterCheckbox:focus {
+  border: 2px solid $orange;
+}
+
+input[type="checkbox"] {
+  accent-color: $white;
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid $dark-grey;
+  border-radius: 1px;
+  margin-right: 5px;
+  margin: 0;
+
+  &:hover {
+    border: 1px solid $black !important;
+  }
+}
+
+input[type="checkbox"]:checked {
+  box-sizing: border-box;
+  display: grid;
+  border: 1px solid $turquoise-dark !important;
+}
+
+
+

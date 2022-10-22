@@ -1,0 +1,33 @@
+@import "../../../../colors";
+
+#filter-tag-container {
+  padding: 8px 16px;
+  display: inline-flex;
+  gap: 8px;
+  border: 1px solid $black;
+
+  &:hover {
+    color: $primary;
+    border-color: $primary;
+    cursor: pointer;
+  }
+
+  &:focus {
+    border-color: $orange;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+.svg-icon.close {
+  height: 24px;
+  width: 24px;
+  background-color: $black;
+  mask-image: url("../../../../assets/icons/close.svg");
+
+  &:hover {
+    background-color: $primary;
+  }
+}
