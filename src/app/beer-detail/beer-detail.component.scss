@@ -1,0 +1,113 @@
+@import "../../colors";
+
+#top-row-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#beer-main-info-container {
+  width: 954px;
+  height: 318px;
+  display: grid;
+  grid-template-columns: 411px 1fr;
+  gap: 27px;
+}
+
+#beer-main-info {
+  display: flex;
+  flex-direction: column;
+}
+
+#img-container {
+  background-color: rgb(242, 242, 242);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  height: 250px;
+  object-fit: contain;
+  margin-top: 45px;
+}
+
+.headline_h1 {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+#contributor {
+  color: $dark-grey;
+  margin: 0;
+}
+
+#beer-name-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#share-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+#description {
+  text-align: justify;
+  margin-bottom: 0;
+}
+
+#price {
+  margin: 0;
+}
+
+.caption {
+  margin: 0;
+}
+
+#price-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.headline_h2 {
+  margin-bottom: 32px;
+}
+
+#beer-facts-container-outer {
+  width: 50%;
+  margin-top: 64px;
+  margin-bottom: 32px;
+}
+
+#beer-facts-container-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.beer-facts-row {
+  border-bottom: 1px solid $grey;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.beer-fact-title {
+  color: $dark-grey;
+  width: 110px;
+  min-width: 110px;
+  margin-right: 40px;
+}
+
+.beer-fact-desc {
+  text-align: justify;
+}
+
+.beer-fact-title, .beer-fact-desc {
+  margin-top: 0;
+}

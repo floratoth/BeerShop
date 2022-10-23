@@ -1,0 +1,28 @@
+<div id="search-bar-container" [style.width]="width">
+  <div
+    id="minus-icon-container"
+    (click)="input.value = (+input.value - 1).toString()"
+    (click)="onChangeClicked()"
+  >
+    <div id="minus-icon" class="icon svg-icon"></div>
+  </div>
+  <input
+    type="number"
+    placeholder="0"
+    id="input"
+    #input
+    (change)="onChangeClicked()"
+  />
+  <div
+    id="plus-icon-container"
+    (click)="input.value = (+input.value + 1).toString()"
+    (click)="onChangeClicked()"
+  >
+    <img
+      src="../../../../assets/icons/plus.svg"
+      alt="Search icon"
+      id="plus-icon"
+      class="icon svg-icon"
+    />
+  </div>
+</div>

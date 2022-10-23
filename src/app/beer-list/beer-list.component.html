@@ -44,6 +44,8 @@
           [imageUrl]="beer.image_url"
           [price]="beer.price"
           [content]="beer.content"
+          [id]="beer.id"
+          (cardClicked)="navigateToDetailPage($event)"
         ></app-beer-card>
       </ng-container>
     </div>

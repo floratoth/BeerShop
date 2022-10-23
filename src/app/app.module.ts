@@ -15,6 +15,9 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FilterTagComponent } from './beer-list/UI/filter-tag/filter-tag.component';
 import { BeerDetailComponent } from './beer-detail/beer-detail.component';
+import { PlusMinusButtonComponent } from './shared/UI/plus-minus-button/plus-minus-button.component';
+import { CartCardComponent } from './beer-detail/cart-card/cart-card.component';
+import { PrimaryButtonComponent } from './shared/UI/primary-button/primary-button.component';
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { BeerDetailComponent } from './beer-detail/beer-detail.component';
     CheckboxComponent,
     FilterBarComponent,
     FilterTagComponent,
-    BeerDetailComponent
+    BeerDetailComponent,
+    PlusMinusButtonComponent,
+    CartCardComponent,
+    PrimaryButtonComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,51 @@
-<p>beer-detail works!</p>
+<ng-container *ngIf="beer$ | async as beer">
+  <div id="top-row-container">
+    <div id="beer-main-info-container">
+      <div id="img-container">
+        <img [src]="beer.image_url" alt="" />
+      </div>
+      <div id="beer-main-info">
+        <div id="beer-main-info-top-section">
+          <div id="beer-name-container">
+            <p class="headline_h1">{{ beer.name }}</p>
+            <img id="share-icon" src="../../assets/icons/share.svg" alt="">
+          </div>
+          <p id="contributor">{{ beer.contributor }}</p>
+          <p id="description">{{ beer.description }}</p>
+        </div>
+        <div id="price-container">
+          <p id="price" class="headline_h2">{{ beer.price | currency:'EUR' }}</p>
+          <p class="caption">Plus <span class="caption_link">shipping costs</span></p>
+        </div>
+      </div>
+    </div>
+    <app-cart-card></app-cart-card>
+  </div>
+
+  <div id="beer-facts-container-outer">
+    <p class="headline_h2">Beer Facts</p>
+    <div id="beer-facts-container-inner">
+      <div class="beer-facts-row">
+        <p class="beer-fact-title">About:</p>
+        <p class="beer-fact-desc">{{ beer.tagline }}</p>
+      </div>
+      <div class="beer-facts-row">
+        <p class="beer-fact-title">Brewers Tips:</p>
+        <p class="beer-fact-desc">{{ beer.brewers_tips }}</p>
+      </div>
+      <div class="beer-facts-row">
+        <p class="beer-fact-title">Beer Style:</p>
+        <p class="beer-fact-desc">{{ beer.beer_style }}</p>
+      </div>
+      <div class="beer-facts-row">
+        <p class="beer-fact-title">ABV (% ALCOHOL):</p>
+        <p class="beer-fact-desc">{{ beer.abv }}</p>
+      </div>
+      <div class="beer-facts-row">
+        <p class="beer-fact-title">Food Pairing:</p>
+        <p class="beer-fact-desc">{{ beer.food_pairing.join(', ') }}</p>
+      </div>
+
+    </div>
+  </div>
+</ng-container>

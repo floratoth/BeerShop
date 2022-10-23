@@ -1,0 +1,33 @@
+@import "../../../colors";
+
+#card-cart-container {
+  width: 300px;
+  background-color: rgb(242, 242, 242);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+
+#shipping-cost {
+  color: $primary;
+}
+
+#delivery-time {
+  margin-bottom: 18px;
+}
+
+#total {
+  margin-bottom: 8px;
+}
+
+#buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

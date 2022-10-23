@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { map, Observable, of } from 'rxjs';
 import { BeerService } from '../shared/data-access/beer.service';
 import { Beer } from '../shared/model/beer';
@@ -62,7 +63,7 @@ export class BeerListComponent implements OnInit {
   ];
   activeFilters$?: Observable<any[]>;
 
-  constructor(private beerService: BeerService) {
+  constructor(private beerService: BeerService, private router: Router) {
     this.beers = this.beerService.getBeers();
   }
 
@@ -103,5 +104,9 @@ export class BeerListComponent implements OnInit {
         });
       })
     );
+  }
+
+  navigateToDetailPage(id: number): void {
+    this.router.navigate(['/beers', id]);
   }
 }

@@ -8,4 +8,9 @@ export interface Beer {
   price: number;
   content: number;
   number_of_malt: number;
+  description: string;
+  abv: number;
+  tagline: string;
+  food_pairing: string[];
+  brewers_tips: string;
 }
