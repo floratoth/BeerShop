@@ -18,6 +18,7 @@ import { BeerDetailComponent } from './beer-detail/beer-detail.component';
 import { PlusMinusButtonComponent } from './shared/UI/plus-minus-button/plus-minus-button.component';
 import { CartCardComponent } from './beer-detail/cart-card/cart-card.component';
 import { PrimaryButtonComponent } from './shared/UI/primary-button/primary-button.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { PrimaryButtonComponent } from './shared/UI/primary-button/primary-butto
     BeerDetailComponent,
     PlusMinusButtonComponent,
     CartCardComponent,
-    PrimaryButtonComponent
+    PrimaryButtonComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

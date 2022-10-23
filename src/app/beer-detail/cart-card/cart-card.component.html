@@ -6,11 +6,15 @@
     <p>Prices incl. VAT plus <span id="shipping-cost">shipping costs</span></p>
   </div>
   <div id="buttons-container">
-    <app-plus-minus-button [width]="'100%'"></app-plus-minus-button>
+    <app-plus-minus-button [width]="'100%'" (valueChanged)="onQuantityChange($event)" ></app-plus-minus-button>
     <app-primary-button
       class="add-to-cart"
       [width]="'100%'"
       [text]="'Add to cart'"
+      (clicked)="onCartButtonClicked()"
     ></app-primary-button>
   </div>
+<!--   <div *ngFor="let beer of beers$ | async">
+    <p>{{ beer.name }}</p>
+  </div> -->
 </div>

@@ -17,4 +17,8 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/beers']);
   }
 
+  onCartClicked(): void {
+    this.router.navigate(['/cart']);
+  }
+
 }

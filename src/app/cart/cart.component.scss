@@ -1,0 +1,48 @@
+@import "../../colors";
+
+#cart-container-outer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#main-content {
+  width: 950px;
+}
+
+#cart-header {
+  width: 100%;
+  height: 100%;
+  background-color: $very-light-grey;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 25% 25% 15% 20% 15%;
+  padding: 0 12px;
+}
+
+.cart-row {
+  width: 100%;
+  height: 150px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 25% 25% 15% 20% 15%;
+  border-bottom: 1px solid $grey;
+  padding: 0 16px;
+  align-items: center;
+}
+
+.dark-grey {
+  color: $dark-grey !important;
+}
+
+.row-p {
+  margin: 0;
+}
+
+#cart-info-img {
+  background-color: rgb(245, 241, 245);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}

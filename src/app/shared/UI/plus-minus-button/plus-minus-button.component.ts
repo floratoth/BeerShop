@@ -3,8 +3,10 @@ import {
   asNativeElements,
   Component,
   ElementRef,
+  EventEmitter,
   Input,
   OnInit,
+  Output,
   ViewChild,
 } from '@angular/core';
 
@@ -15,6 +17,8 @@ import {
 })
 export class PlusMinusButtonComponent implements OnInit {
   @Input() width?: string;
+  @Input() quantity?: number = 0;
+  @Output() valueChanged: EventEmitter<number> = new EventEmitter<number>();
 
   @ViewChild('input') myDiv?: ElementRef<HTMLInputElement>;
   inputValue?: number;
@@ -25,5 +29,6 @@ export class PlusMinusButtonComponent implements OnInit {
 
   onChangeClicked(): void {
     this.inputValue = Number(this.myDiv?.nativeElement.value);
+    this.valueChanged.emit(this.inputValue);
   }
 }

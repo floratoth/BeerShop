@@ -1,0 +1,43 @@
+<p class="headline_h1">Shopping Cart</p>
+<div id="cart-container-outer">
+  <div id="main-content">
+    <div id="cart-container-inner">
+      <div id="cart-header">
+        <p class="cart-header-title text_bold">Product</p>
+        <p class="cart-header-title text_bold">Contributor</p>
+        <p class="cart-header-title text_bold">Price</p>
+        <p class="cart-header-title text_bold">Quantity</p>
+        <p class="cart-header-title text_bold">Subtotal</p>
+      </div>
+      <ng-container *ngIf="cartItems$ | async as items">
+        <div class="cart-row" *ngFor="let cartItem of items">
+          <div>
+            <div id="cart-info-img">
+              <img [src]="cartItem.beer.image_url" alt=""/>
+            </div>
+            <p>
+              {{ cartItem.beer.name }}
+            </p>
+          </div>
+          <div class="dark-grey">{{ cartItem.beer.contributor }}</div>
+          <div>
+            <p class="text_bold row-p">{{ cartItem.beer.price | currency: "EUR" }}</p>
+            <p class="dark-grey row-p">Excl. VAT</p>
+          </div>
+          <div>
+            <app-plus-minus-button
+              [width]="'154px'"
+              [quantity]="cartItem.quantity"
+            ></app-plus-minus-button>
+          </div>
+          <div>
+            <p class="text_bold row-p">{{ cartItem.beer.price * cartItem.quantity | currency: "EUR" }}</p>
+            <p class="dark-grey row-p">Excl. VAT</p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div id="you-might-also-like"></div>
+  </div>
+  <div id="summary"></div>
+</div>

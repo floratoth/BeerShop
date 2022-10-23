@@ -20,7 +20,6 @@ export class BeerDetailComponent implements OnInit {
         return this.beerService.getBeer(id);
       })
     );
-    this.beer$.subscribe((beer) => console.log(beer));
   }
 
   ngOnInit(): void {}
