@@ -35,8 +35,7 @@
             <app-plus-minus-button
               [width]="'154px'"
               [quantity]="cartItem.quantity"
-              (minusClicked)="decreaseQuantity(cartItem, -1)"
-              (plusClicked)="incrementQuantity(cartItem, 1)"
+              (valueChanged)="onQuantityChanged($event, cartItem)"
             ></app-plus-minus-button>
           </div>
           <div>
@@ -45,11 +44,18 @@
             </p>
             <p class="dark-grey row-p">Excl. VAT</p>
           </div>
-          <img id="delete-icon" src="../../assets/icons/delete.svg" alt="Delete icon" (click)="onDeleteClicked(cartItem.beer.id)">
+          <img
+            id="delete-icon"
+            src="../../assets/icons/delete.svg"
+            alt="Delete icon"
+            (click)="onDeleteClicked(cartItem.beer.id)"
+          />
         </div>
       </ng-container>
     </div>
     <div id="you-might-also-like"></div>
   </div>
-  <div id="summary"></div>
+  <div id="summary">
+    <app-summary></app-summary>
+  </div>
 </div>

@@ -2,11 +2,14 @@
   <div>
     <p id="delivery-time">Delivery time appr. 3–7 workdays</p>
     <p class="headline_h4" id="total">Total</p>
-    <p class="headline_h2">€8.49</p>
+    <p class="headline_h2" *ngIf="beer">{{ beer.price * actualQuantity | currency: 'EUR' }}</p>
     <p>Prices incl. VAT plus <span id="shipping-cost">shipping costs</span></p>
   </div>
   <div id="buttons-container">
-    <app-plus-minus-button [width]="'100%'" (valueChanged)="onQuantityChange($event)" ></app-plus-minus-button>
+    <app-plus-minus-button
+      [width]="'100%'"
+      (valueChanged)="onQuantityChange($event)"
+    ></app-plus-minus-button>
     <app-primary-button
       class="add-to-cart"
       [width]="'100%'"
@@ -14,7 +17,4 @@
       (clicked)="onCartButtonClicked()"
     ></app-primary-button>
   </div>
-<!--   <div *ngFor="let beer of beers$ | async">
-    <p>{{ beer.name }}</p>
-  </div> -->
 </div>

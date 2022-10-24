@@ -1,0 +1,31 @@
+<div id="card-cart-container">
+  <div id="summary-header">
+    <p class="headline_h4" id="summary-title">Summary</p>
+    <p>Free shipping from €500</p>
+  </div>
+  <div id="prices-container">
+    <div class="price-item">
+      <p>Items:</p>
+      <p>{{ price$ | async | currency: 'EUR' }}</p>
+    </div>
+    <div class="price-item">
+      <p>VAT:</p>
+      <p>{{ vat | currency: 'EUR' }}</p>
+    </div>
+    <div class="price-item">
+      <p>Shipping & handling:</p>
+      <p>{{ shippingPrice | currency: 'EUR' }}</p>
+    </div>
+  </div>
+  <div id="buttons-container">
+    <div id="order-total">
+      <p class="headline_h4">Order total</p>
+      <p class="headline_h4">{{ total | currency: 'EUR' }}</p>
+    </div>
+    <app-primary-button
+      class="add-to-cart"
+      [width]="'100%'"
+      [text]="'Checkout'"
+    ></app-primary-button>
+  </div>
+</div>

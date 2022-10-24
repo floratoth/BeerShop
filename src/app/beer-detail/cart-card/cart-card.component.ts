@@ -12,8 +12,7 @@ export class CartCardComponent implements OnInit {
   @Input() beer?: Beer;
   actualQuantity: number = 0;
 
-  constructor(private cartService: CartService) {
-  }
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {}
 
@@ -25,7 +24,5 @@ export class CartCardComponent implements OnInit {
 
   onQuantityChange(value: number): void {
     this.actualQuantity = value;
-    console.log('actualQuantity',this.actualQuantity);
-
   }
 }

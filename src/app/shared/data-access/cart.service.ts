@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable, pipe } from 'rxjs';
+import { BehaviorSubject, map, Observable, pipe, reduce, Subject } from 'rxjs';
 import { Beer } from '../model/beer';
 
 export type cartItem = {
@@ -11,39 +11,25 @@ export type cartItem = {
   providedIn: 'root',
 })
 export class CartService {
-  /* cartContent$: BehaviorSubject<Beer[]> = new BehaviorSubject<Beer[]>([]); */
   cartContent$: BehaviorSubject<cartItem[]> = new BehaviorSubject<cartItem[]>(
     []
   );
+  itemsPrice$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-  constructor() {}
-
-  /*   addBeer(beer: Beer, quantity: number): void {
-    let beers = this.cartContent$.getValue();
-    for (let i = 0; i < quantity; i++) {
-      beers.push(beer);
-    }
-    console.log('cart: ', beers);
-    this.cartContent$.next(beers);
+  constructor() {
+    /* this.itemsPrice$ = this.cartContent$.pipe(
+      reduce((acc, curr) =>{
+        return acc + +(curr.map(item => item.quantity * item.beer.price));
+      }, 0)
+    ) */
   }
-
-  deleteBeer(id: number): void {
-    let beers = this.cartContent$.getValue();
-    beers.splice(
-      beers.findIndex((beer: Beer) => {
-        return id == beer.id;
-      }),
-      1
-    );
-    this.cartContent$.next(beers);
-  } */
 
   addBeer(newBeer: Beer, newQuantity: number): void {
     let beers = this.cartContent$.getValue();
     let beerExistInCart: boolean = false;
     beers.map((item) => {
       if (item.beer.id === newBeer.id) {
-        item.quantity += newQuantity;
+        item.quantity = newQuantity;
         beerExistInCart = true;
       }
     });
@@ -51,6 +37,7 @@ export class CartService {
       beers.push({ quantity: newQuantity, beer: newBeer });
     }
     this.cartContent$.next(beers);
+    this.changePrice(beers);
   }
 
   deleteBeer(id: number): void {
@@ -59,8 +46,18 @@ export class CartService {
       if (item.beer.id === id) {
         beers.splice(index, 1);
       }
-    })
-    console.log(beers);
+    });
     this.cartContent$.next(beers);
+    this.changePrice(beers);
+  }
+
+  changePrice(itemList: cartItem[]): void {
+    let totalPrice;
+    let beerPrice;
+    totalPrice = itemList.reduce((total, curr) => {
+      beerPrice = curr.quantity * curr.beer.price;
+      return total + beerPrice;
+    }, 0);
+    this.itemsPrice$.next(totalPrice);
   }
 }

@@ -1,5 +1,6 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map, Observable, reduce } from 'rxjs';
 import { CartService } from '../shared/data-access/cart.service';
 import { cartItem } from '../shared/data-access/cart.service';
 
@@ -15,17 +16,29 @@ export class CartComponent implements OnInit {
     this.cartItems$ = this.cartService.cartContent$;
   }
 
+  helperF(amount: number, item: cartItem): number {
+    return amount + item.quantity * item.beer.price;
+  }
+
   ngOnInit(): void {}
 
-  decreaseQuantity(beerItem: cartItem, quantity: number): void {
-    this.cartService.addBeer(beerItem.beer, quantity);
+/*   decreaseQuantity(beerItem: cartItem, quantity: number): void {
+    this.cartService.addBeer(beerItem.beer, beerItem.quantity-1);
+    console.log("O-o -")
   }
 
   incrementQuantity(beerItem: cartItem, quantity: number): void {
-    this.cartService.addBeer(beerItem.beer, quantity);
+    this.cartService.addBeer(beerItem.beer, beerItem.quantity+1);
+    console.log("O-O +");
+  } */
+
+  onQuantityChanged(value: number, item: cartItem) {
+    console.log('onQuantityChanged value: ', value);
+    this.cartService.addBeer(item.beer, value);
   }
 
   onDeleteClicked(id: number) {
     this.cartService.deleteBeer(id);
   }
+
 }
