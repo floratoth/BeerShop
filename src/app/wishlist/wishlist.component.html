@@ -1,0 +1,16 @@
+<h2 class="headline_h1">All Beers</h2>
+<div id="beer-list-grid">
+  <ng-container *ngFor="let beer of beers">
+    <app-beer-card
+      [beerStyle]="beer.beer_style"
+      [beerName]="beer.name"
+      [beerDesc]="beer.contributor"
+      [imageUrl]="beer.image_url"
+      [price]="beer.price"
+      [content]="beer.content"
+      [id]="beer.id"
+      (cardClicked)="navigateToDetailPage($event)"
+      class="card"
+    ></app-beer-card>
+  </ng-container>
+</div>

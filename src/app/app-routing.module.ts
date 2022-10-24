@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BeerDetailComponent } from './beer-detail/beer-detail.component';
 import { BeerListComponent } from './beer-list/beer-list.component';
 import { CartComponent } from './cart/cart.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartComponent,
+  },
+  {
+    path: 'wishlist',
+    component: WishlistComponent,
   },
   {
     path: '',

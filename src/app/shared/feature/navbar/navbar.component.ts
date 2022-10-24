@@ -4,14 +4,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onLogoClicked(): void {
     this.router.navigate(['/beers']);
@@ -21,4 +19,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/cart']);
   }
 
+  onWishlistClicked(): void {
+    this.router.navigate(['/wishlist']);
+  }
 }

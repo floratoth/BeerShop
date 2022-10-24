@@ -20,6 +20,9 @@ import { CartCardComponent } from './beer-detail/cart-card/cart-card.component';
 import { PrimaryButtonComponent } from './shared/UI/primary-button/primary-button.component';
 import { CartComponent } from './cart/cart.component';
 import { SummaryComponent } from './cart/UI/summary/summary.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FavouritesHeartComponent } from './shared/UI/favourites-heart/favourites-heart.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 
 @NgModule({
@@ -38,14 +41,17 @@ import { SummaryComponent } from './cart/UI/summary/summary.component';
     CartCardComponent,
     PrimaryButtonComponent,
     CartComponent,
-    SummaryComponent
+    SummaryComponent,
+    FavouritesHeartComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

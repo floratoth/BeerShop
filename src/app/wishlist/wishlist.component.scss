@@ -1,0 +1,15 @@
+#beer-list-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+h2 {
+  margin-bottom: 56px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

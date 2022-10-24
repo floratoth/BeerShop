@@ -9,15 +9,21 @@
             class="card-header-icon"
             alt=""
           />
-          <img
+          <!-- <img
             src="../../../../assets/icons/heart.svg"
             class="card-header-icon"
             alt=""
           />
+          <fa-icon [icon]="faHeart" id="filled-heart" size="xl"></fa-icon> -->
+          <app-favourites-heart
+            [id]="id"
+            [isFavourite]="favouritesService.isFavourite(id)"
+            class="card-header-icon favourites"
+          ></app-favourites-heart>
         </div>
       </div>
       <div id="card-info-img" (click)="onCardClicked()">
-        <img [src]="imageUrl" alt=""/>
+        <img [src]="imageUrl" alt="" />
       </div>
       <div id="card-info-text">
         <p id="beerStyle">{{ beerStyle }}</p>

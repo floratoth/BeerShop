@@ -34,6 +34,7 @@
 #card-header-icons-container {
   display: flex;
   width: 80px;
+  align-items: center;
 }
 
 .card-header-icon {
@@ -138,4 +139,11 @@ img {
   width: 24px;
   background-color: $white;
   mask-image: url("../../../../assets/icons/cart.svg");
+}
+
+.favourites {
+  display: flex;
+  &:hover {
+    cursor: pointer;
+  }
 }

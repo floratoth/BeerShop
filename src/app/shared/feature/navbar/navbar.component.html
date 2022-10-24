@@ -19,7 +19,7 @@
         <app-search-bar></app-search-bar>
         <div id="nav-menu-items">
           <app-nav-menu-item [title]="'My Account'" [iconSrc]="'../../../../assets/icons/account.svg'"></app-nav-menu-item>
-          <app-nav-menu-item [title]="'Wishlist (0)'" [iconSrc]="'../../../../assets/icons/favourites.svg'"></app-nav-menu-item>
+          <app-nav-menu-item [title]="'Wishlist (0)'" [iconSrc]="'../../../../assets/icons/favourites.svg'" (click)="onWishlistClicked()"></app-nav-menu-item>
           <app-nav-menu-item [title]="'Compare'" [iconSrc]="'../../../../assets/icons/compare.svg'"></app-nav-menu-item>
           <app-nav-menu-item [title]="'Cart (0)'" [iconSrc]="'../../../../assets/icons/cart.svg'" (click)="onCartClicked()" ></app-nav-menu-item>
         </div>
