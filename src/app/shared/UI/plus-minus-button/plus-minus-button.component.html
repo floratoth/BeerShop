@@ -3,6 +3,7 @@
     id="minus-icon-container"
     (click)="input.value = (+input.value - 1).toString()"
     (click)="onChangeClicked()"
+    (click)="onMinusClicked()"
   >
     <div id="minus-icon" class="icon svg-icon"></div>
   </div>
@@ -18,6 +19,7 @@
     id="plus-icon-container"
     (click)="input.value = (+input.value + 1).toString()"
     (click)="onChangeClicked()"
+    (click)="onPlusClicked()"
   >
     <img
       src="../../../../assets/icons/plus.svg"

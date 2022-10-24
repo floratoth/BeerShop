@@ -50,7 +50,17 @@ export class CartService {
     if (!beerExistInCart) {
       beers.push({ quantity: newQuantity, beer: newBeer });
     }
-    console.log('cart: ', beers);
+    this.cartContent$.next(beers);
+  }
+
+  deleteBeer(id: number): void {
+    let beers = this.cartContent$.getValue();
+    beers.map((item, index) => {
+      if (item.beer.id === id) {
+        beers.splice(index, 1);
+      }
+    })
+    console.log(beers);
     this.cartContent$.next(beers);
   }
 }

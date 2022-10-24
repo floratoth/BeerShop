@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { CartService } from '../shared/data-access/cart.service';
 import { cartItem } from '../shared/data-access/cart.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
   cartItems$: Observable<cartItem[]>;
@@ -15,7 +15,17 @@ export class CartComponent implements OnInit {
     this.cartItems$ = this.cartService.cartContent$;
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  decreaseQuantity(beerItem: cartItem, quantity: number): void {
+    this.cartService.addBeer(beerItem.beer, quantity);
   }
 
+  incrementQuantity(beerItem: cartItem, quantity: number): void {
+    this.cartService.addBeer(beerItem.beer, quantity);
+  }
+
+  onDeleteClicked(id: number) {
+    this.cartService.deleteBeer(id);
+  }
 }

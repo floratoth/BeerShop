@@ -11,29 +11,41 @@
       </div>
       <ng-container *ngIf="cartItems$ | async as items">
         <div class="cart-row" *ngFor="let cartItem of items">
-          <div>
-            <div id="cart-info-img">
-              <img [src]="cartItem.beer.image_url" alt=""/>
+          <div id="name-img-container">
+            <div id="cart-row-img-container">
+              <img id="cart-row-img" [src]="cartItem.beer.image_url" alt="" />
             </div>
-            <p>
-              {{ cartItem.beer.name }}
-            </p>
+            <div id="beer-name-product-no-container">
+              <p class="text_semi-bold row-p" id="beer-name">
+                {{ cartItem.beer.name }}
+              </p>
+              <p class="caption_small row-p" id="product-no">
+                Product-No: 346873
+              </p>
+            </div>
           </div>
           <div class="dark-grey">{{ cartItem.beer.contributor }}</div>
           <div>
-            <p class="text_bold row-p">{{ cartItem.beer.price | currency: "EUR" }}</p>
+            <p class="text_bold row-p">
+              {{ cartItem.beer.price | currency: "EUR" }}
+            </p>
             <p class="dark-grey row-p">Excl. VAT</p>
           </div>
           <div>
             <app-plus-minus-button
               [width]="'154px'"
               [quantity]="cartItem.quantity"
+              (minusClicked)="decreaseQuantity(cartItem, -1)"
+              (plusClicked)="incrementQuantity(cartItem, 1)"
             ></app-plus-minus-button>
           </div>
           <div>
-            <p class="text_bold row-p">{{ cartItem.beer.price * cartItem.quantity | currency: "EUR" }}</p>
+            <p class="text_bold row-p">
+              {{ cartItem.beer.price * cartItem.quantity | currency: "EUR" }}
+            </p>
             <p class="dark-grey row-p">Excl. VAT</p>
           </div>
+          <img id="delete-icon" src="../../assets/icons/delete.svg" alt="Delete icon" (click)="onDeleteClicked(cartItem.beer.id)">
         </div>
       </ng-container>
     </div>
