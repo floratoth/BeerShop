@@ -10,7 +10,6 @@ import { NavbarComponent } from './shared/feature/navbar/navbar.component';
 import { SearchBarComponent } from './shared/UI/search-bar/search-bar.component';
 import { NavMenuItemComponent } from './shared/UI/nav-menu-item/nav-menu-item.component';
 import { CheckboxComponent } from './beer-list/UI/checkbox/checkbox.component';
-import { FilterBarComponent } from './beer-list/UI/filter-bar/filter-bar.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FilterTagComponent } from './beer-list/UI/filter-tag/filter-tag.component';
@@ -34,7 +33,6 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     SearchBarComponent,
     NavMenuItemComponent,
     CheckboxComponent,
-    FilterBarComponent,
     FilterTagComponent,
     BeerDetailComponent,
     PlusMinusButtonComponent,

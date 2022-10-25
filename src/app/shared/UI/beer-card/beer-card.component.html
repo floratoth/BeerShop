@@ -5,16 +5,10 @@
         <span>Badge</span>
         <div id="card-header-icons-container">
           <img
-            src="../../../../assets/icons/compare-black.svg"
+            src="./assets/icons/compare-black.svg"
             class="card-header-icon"
             alt=""
           />
-          <!-- <img
-            src="../../../../assets/icons/heart.svg"
-            class="card-header-icon"
-            alt=""
-          />
-          <fa-icon [icon]="faHeart" id="filled-heart" size="xl"></fa-icon> -->
           <app-favourites-heart
             [id]="id"
             [isFavourite]="favouritesService.isFavourite(id)"
@@ -53,7 +47,7 @@
         <button id="cart-button">
           <div
             class="svg-icon cart-button-icon"
-            src="../../../../assets/icons/cart.svg"
+            src="./assets/icons/cart.svg"
           ></div>
           <span class="button_label">Add to cart</span>
         </button>

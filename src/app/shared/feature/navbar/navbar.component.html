@@ -1,27 +1,27 @@
 <div id="navbar-container">
   <div id="navbar-container-top">
     <div class="navbar-container-top-item">
-      <img src="../../../../assets/icons/contact.svg" alt="Contact icon" id="contact-img">
+      <img src="./assets/icons/contact.svg" alt="Contact icon" id="contact-img">
       <span> Contact</span>
     </div>
     <div class="navbar-container-top-item">
-      <img src="../../../../assets/icons/word.svg" alt="Word icon">
+      <img src="./assets/icons/word.svg" alt="Word icon">
       <span id="language-text">EN</span>
-      <img src="../../../../assets/icons/arrow_down.svg" alt="Word icon">
+      <img src="./assets/icons/arrow_down.svg" alt="Word icon">
     </div>
   </div>
   <div id="navbar-container-bottom">
     <div id="logo-container">
-      <img id="logo" src="../../../../assets/logo.svg" (click)="onLogoClicked()" alt="Logo of Beer Shop" />
+      <img id="logo" src="./assets/logo.svg" (click)="onLogoClicked()" alt="Logo of Beer Shop" />
     </div>
     <div id="navbar-content-container">
       <div id="navbar-content-container-top">
         <app-search-bar></app-search-bar>
         <div id="nav-menu-items">
-          <app-nav-menu-item [title]="'My Account'" [iconSrc]="'../../../../assets/icons/account.svg'"></app-nav-menu-item>
-          <app-nav-menu-item [title]="'Wishlist (0)'" [iconSrc]="'../../../../assets/icons/favourites.svg'" (click)="onWishlistClicked()"></app-nav-menu-item>
-          <app-nav-menu-item [title]="'Compare'" [iconSrc]="'../../../../assets/icons/compare.svg'"></app-nav-menu-item>
-          <app-nav-menu-item [title]="'Cart (0)'" [iconSrc]="'../../../../assets/icons/cart.svg'" (click)="onCartClicked()" ></app-nav-menu-item>
+          <app-nav-menu-item [title]="'My Account'" [iconSrc]="'./assets/icons/account.svg'"></app-nav-menu-item>
+          <app-nav-menu-item [title]="'Wishlist (0)'" [iconSrc]="'./assets/icons/favourites.svg'" (click)="onWishlistClicked()"></app-nav-menu-item>
+          <app-nav-menu-item [title]="'Compare'" [iconSrc]="'./assets/icons/compare.svg'"></app-nav-menu-item>
+          <app-nav-menu-item [title]="'Cart (0)'" [iconSrc]="'./assets/icons/cart.svg'" (click)="onCartClicked()" ></app-nav-menu-item>
         </div>
       </div>
       <div id="navbar-content-container-bottom">
