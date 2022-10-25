@@ -2,7 +2,7 @@
   <div id="card-container-inner">
     <div id="card-info-container">
       <div id="card-info-header">
-        <span>Badge</span>
+        <span id="badge"></span>
         <div id="card-header-icons-container">
           <img
             src="./assets/icons/compare-black.svg"
@@ -43,14 +43,13 @@
           value="1"
           id="card-cart-input"
           class="text_standard"
+          (change)="onQuantityChange()"
+          #input
         />
-        <button id="cart-button">
-          <div
-            class="svg-icon cart-button-icon"
-            src="./assets/icons/cart.svg"
-          ></div>
-          <span class="button_label">Add to cart</span>
-        </button>
+        <app-primary-button
+          [text]="'Add to cart'"
+          [width]="'150px'"
+        ></app-primary-button>
       </div>
     </div>
   </div>

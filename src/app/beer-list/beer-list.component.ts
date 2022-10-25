@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { map, Observable, of } from 'rxjs';
 import { BeerService } from '../shared/data-access/beer.service';
-import { FavouritesService } from '../shared/data-access/favourites.service';
 import { Beer } from '../shared/model/beer';
 
 @Component({

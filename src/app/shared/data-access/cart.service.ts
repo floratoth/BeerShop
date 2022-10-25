@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable, pipe, reduce, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { Beer } from '../model/beer';
 
 export type cartItem = {
@@ -16,13 +16,7 @@ export class CartService {
   );
   itemsPrice$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-  constructor() {
-    /* this.itemsPrice$ = this.cartContent$.pipe(
-      reduce((acc, curr) =>{
-        return acc + +(curr.map(item => item.quantity * item.beer.price));
-      }, 0)
-    ) */
-  }
+  constructor() {}
 
   addBeer(newBeer: Beer, newQuantity: number): void {
     let beers = this.cartContent$.getValue();

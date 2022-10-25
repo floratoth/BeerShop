@@ -1,6 +1,5 @@
-import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { map, Observable, reduce } from 'rxjs';
+import { Observable } from 'rxjs';
 import { CartService } from '../shared/data-access/cart.service';
 import { cartItem } from '../shared/data-access/cart.service';
 
@@ -21,16 +20,6 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
-/*   decreaseQuantity(beerItem: cartItem, quantity: number): void {
-    this.cartService.addBeer(beerItem.beer, beerItem.quantity-1);
-    console.log("O-o -")
-  }
-
-  incrementQuantity(beerItem: cartItem, quantity: number): void {
-    this.cartService.addBeer(beerItem.beer, beerItem.quantity+1);
-    console.log("O-O +");
-  } */
 
   onQuantityChanged(value: number, item: cartItem) {
     console.log('onQuantityChanged value: ', value);

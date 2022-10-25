@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { map, Observable, switchMap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { BeerService } from '../shared/data-access/beer.service';
 import { FavouritesService } from '../shared/data-access/favourites.service';
 import { Beer } from '../shared/model/beer';

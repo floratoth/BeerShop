@@ -1,4 +1,4 @@
-<h2 class="headline_h1">All Beers</h2>
+<h2 class="headline_h1">My Favourites</h2>
 <div id="beer-list-grid">
   <ng-container *ngFor="let beer of beers">
     <app-beer-card
@@ -9,6 +9,7 @@
       [price]="beer.price"
       [content]="beer.content"
       [id]="beer.id"
+      [beer]="beer"
       (cardClicked)="navigateToDetailPage($event)"
       class="card"
     ></app-beer-card>
