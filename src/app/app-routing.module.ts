@@ -27,6 +27,10 @@ const routes: Routes = [
     pathMatch: 'full',
     redirectTo: 'beers',
   },
+  {
+    path: '**',
+    redirectTo: 'beers',
+  },
 ];
 
 @NgModule({

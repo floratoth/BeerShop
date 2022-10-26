@@ -43,12 +43,12 @@
           value="1"
           id="card-cart-input"
           class="text_standard"
-          (change)="onQuantityChange()"
           #input
         />
         <app-primary-button
           [text]="'Add to cart'"
           [width]="'150px'"
+          (clicked)="onQuantityChange()"
         ></app-primary-button>
       </div>
     </div>
