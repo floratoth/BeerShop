@@ -8,14 +8,8 @@ import { Beer } from '../model/beer';
 })
 export class BeerService {
   private url: string = 'https://api.punkapi.com/v2/beers?page=1&per_page=80';
-  private beers?: Beer[];
 
-  constructor(private http: HttpClient) {
-    this.getBeers().subscribe((item) => {
-      this.beers = item;
-      console.log('beers in service:', this.beers);
-    });
-  }
+  constructor(private http: HttpClient) {}
 
   getBeers(): Observable<Beer[]> {
     return this.http.get<any[]>(this.url).pipe(

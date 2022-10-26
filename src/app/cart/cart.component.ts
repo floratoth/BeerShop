@@ -22,7 +22,6 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {}
 
   onQuantityChanged(value: number, item: cartItem) {
-    console.log('onQuantityChanged value: ', value);
     this.cartService.addBeer(item.beer, value);
   }
 
